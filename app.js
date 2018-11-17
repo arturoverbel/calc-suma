@@ -57,4 +57,11 @@ var app = http.createServer(function (req, res) {
   }
 }).listen(port, '0.0.0.0');
 
+app.get('/suma/:number1/:number2', function (req, res) {
+   var number1 = parseInt(req.params.number1);
+   var number2 = parseInt(req.params.number2);
+   var suma = number1 + number2;
+   res.send( 'Result: ' + suma);
+})
+
 module.exports = app;
